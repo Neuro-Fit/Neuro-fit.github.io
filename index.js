@@ -15,7 +15,7 @@ btnPrincipal.addEventListener('click', function() {
 // Botón de WhatsApp dentro de detalles
 document.getElementById('btnWhatsApp').addEventListener('click', function() {
   const mensaje = encodeURIComponent(
-    'Hola, quisiera información sobre los Planes de Entrenamiento (Virtual y Presencial).'
+    'Hola, quisiera información sobre el plan de entrenamiento Virtual.'
   );
   window.location.href = 'https://wa.me/51982622594?text=' + mensaje;
 });
