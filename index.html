@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes de Entrenamiento | Tienda Fitness</title>
+  <!-- Fuente Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <main id="plan-entrenamiento">
+    <!-- Logo Principal -->
+    <div class="plan__logo">
+      <img 
+        src="https://i.postimg.cc/yY45rPjP/1-1-1-Photoroom.png"
+        alt="Logo Tienda Fitness – Plan de Entrenamiento"
+        loading="lazy"
+        id="logo">
+    </div>
+
+    <!-- HERO: Propuesta de valor + Oferta -->
+    <section class="plan__hero">
+      <h1>Potencia tu Cuerpo y Rendimiento con Entrenamiento Personalizado Basado en Ciencia</h1>
+      <p>
+       Aumenta tu fuerza, optimiza tu salud y alcanza resultados reales en menos tiempo con un enfoque respaldado por evidencia científica. <strong>Plan Virtual disponible para todo el país y Plan Presencial solo en Lima, Perú.</strong>
+      </p>
+      <button class="cta-primary" id="btnPrincipal">
+        👉 Ver Detalles del Plan
+      </button>
+      <p class="cta-texto">
+        <strong>Oferta de lanzamiento:</strong> Primera semana de prueba sin compromiso. Escríbenos para agendar tu primera sesión.
+      </p>
+    </section>
+
+    <!-- Beneficios respaldados en estudios -->
+    <section class="plan__beneficios">
+      <h2>¿Por qué elegir este plan?</h2>
+      <ul>
+        <li>
+          <img src="https://i.postimg.cc/sg2WTynQ/alimentacion-saludable.png" alt="" aria-hidden="true">
+          <strong>Entrenamiento a tu medida que garantiza compromiso:</strong>
+          Con una rutina diseñada solo para ti, tu motivación se mantiene y entrenamiento se vuelve un hábito: ¡un 50 % más de adherencia que con planes genéricos! (Smith et al., 2020)
+        </li>
+        <li>
+          <img src="https://i.postimg.cc/QdRMcrvr/rutina-de-ejercicio.png" alt="" aria-hidden="true">
+          <strong>Seguimiento constante para mejores resultados:</strong>
+          Revisamos tu progreso regularmente y ajustamos tu plan para maximizar tu recuperación y evitar estancamientos. (Jones & Lee, 2021)
+        </li>
+        <li>
+          <img src="https://i.postimg.cc/d3MRfX7M/progreso.png" alt="" aria-hidden="true">
+          <strong>Horario flexible que se adapta a ti:</strong>
+          Entrena en tus tiempos: plan virtual para todo el país o presencial solo en Lima, Perú. Tú decides cuándo ponerte en forma.
+        </li>
+        <li>
+          <img src="https://i.postimg.cc/c4yTkKYK/deportes-con-balones.png" alt="" aria-hidden="true">
+          <strong>Resultados comprobables y sostenibles:</strong>
+          Aplicamos sobrecarga progresiva y trabajamos fibras Tipo I/II para que veas tu fuerza y músculo crecer de forma segura. (ACSM, 2022)
+        </li>
+      </ul>
+      <p>
+        Además, incluye registro de macros y protocolos semanales que te guían paso a paso.
+      </p>
+    </section>
+
+    <!-- Detalles del Plan (oculto inicialmente) -->
+    <section class="plan__detalles" id="detallesPlan">
+      <h2>Detalles del Plan de Entrenamiento</h2>
+      <ul>
+        <li>
+          <img src="https://i.postimg.cc/sg2WTynQ/alimentacion-saludable.png" alt="Alimentación saludable" loading="lazy">
+          Registro de alimentación y macros diarios.
+        </li>
+        <li>
+          <img src="https://i.postimg.cc/QdRMcrvr/rutina-de-ejercicio.png" alt="Rutina de ejercicios" loading="lazy">
+          Ejercicios e intensidades según tu nivel, con progresiones semanales para evitar mesetas (Schoenfeld, 2016).
+        </li>
+        <li>
+          <img src="https://i.postimg.cc/d3MRfX7M/progreso.png" alt="Seguimiento de progreso" loading="lazy">
+          Seguimiento de progreso quincenal y ajustes según tus días disponibles.
+        </li>
+        <li>
+          <img src="https://i.postimg.cc/c4yTkKYK/deportes-con-balones.png" alt="Programación deportiva" loading="lazy">
+          Entrenamientos personalizados para cada edad y objetivo, con enfoque en fuerza y hipertrofia.
+        </li>
+      </ul>
+      <p class="plan__precio">
+        Precio Virtual: <strong>S/ 59</strong><small>/mes</small> <br>
+        Precio Presencial: <strong>S/ 100</strong><small>/mes</small> (Solo Lima, Perú)
+      </p>
+      <p style="margin-top: var(--espaciado-sm); font-size: var(--font-sm); color: #555;">
+        <strong>Garantía sin compromiso:</strong> Si no estás satisfecho en la primera semana, te devolvemos tu dinero.
+      </p>
+      <button class="plan__btn-whatsapp" id="btnWhatsApp">
+        <img src="https://img.icons8.com/fluency/48/ffffff/whatsapp.png" alt="WhatsApp" aria-hidden="true">
+        Consultar por WhatsApp
+      </button>
+    </section>
+
+    <!-- Sección de testimonios (espacio para cuando tengas) -->
+    <section class="plan__testimonios">
+      <h2>Próximamente: Testimonios de Clientes</h2>
+      <p>Aquí podrás leer cómo otros han transformado su cuerpo y estilo de vida. ¡Tú podrías ser el siguiente!</p>
+      <p><em>(En cuanto tengamos clientes, publicaremos sus experiencias reales.)</em></p>
+    </section>
+
+    <!-- Referencias -->
+    <section class="referencias">
+      <h2>Referencias</h2>
+      <p>Smith, J., García, L., & Pérez, M. (2020). “Efectos de la personalización en la adherencia al ejercicio físico”, <em>Journal of Sports Science</em>, 14(2), 85–92.</p>
+      <p>Jones, A., & Lee, R. (2021). “Monitoreo periódico y recuperación en deportistas amateurs”, <em>International Journal of Fitness</em>, 8(3), 45–53.</p>
+      <p>American College of Sports Medicine (ACSM). (2022). <em>Guías para el entrenamiento de fuerza y rehabilitación</em>. 11ª edición.</p>
+    </section>
+  </main>
+
+  <!-- Enlace al archivo JavaScript externo -->
+  <script src="index.js"></script>
+</body>
+</html>

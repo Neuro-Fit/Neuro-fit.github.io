@@ -1,0 +1,333 @@
+:root {
+  --color-primario: #274b7b;
+  --color-secundario: #1E3A5F;
+  --color-fondo: #ffffff;
+  --color-texto: #0b103c;
+  --color-acento: #E63946;
+  --radius: 8px;
+  --shadow-light: 0 4px 12px rgba(0,0,0,0.05);
+  --font-base: 1rem;       /* 16px */
+  --font-sm: 0.875rem;     /* 14px */
+  --font-lg: 1.125rem;     /* 18px */
+  --font-xl: 1.5rem;       /* 24px */
+  --font-xxl: 1.75rem;     /* 28px */
+  --trans-duracion: 0.25s;
+  --espaciado-base: 1rem;
+  --espaciado-sm: 0.5rem;
+  --espaciado-lg: 1.5rem;
+}
+
+/* ================================
+   Reinicio básico y tipografía
+================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+html {
+  font-size: 100%;
+}
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--trans-duracion) ease;
+  padding: var(--espaciado-base) 0;
+}
+body.loaded {
+  visibility: visible;
+  opacity: 1;
+}
+h1 {
+  font-size: var(--font-xxl);
+  margin-bottom: var(--espaciado-sm);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--font-xl);
+  margin-bottom: var(--espaciado-sm);
+  font-weight: 700;
+}
+p {
+  font-size: var(--font-base);
+  margin-bottom: var(--espaciado-sm);
+}
+ul {
+  list-style: none;
+  margin-bottom: var(--espaciado-base);
+}
+li {
+  font-size: var(--font-sm);
+  margin-bottom: var(--espaciado-base);
+  display: flex;
+  align-items: flex-start;
+}
+li img {
+  width: 18px;
+  height: 18px;
+  margin-right: var(--espaciado-sm);
+  margin-top: 4px;
+}
+li strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--espaciado-sm);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================================
+   Loader de entrada
+================================== */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--color-fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--color-primario);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+body.loaded #loader {
+  display: none;
+}
+
+/* ================================
+   Contenedor principal
+================================== */
+#plan-entrenamiento {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 var(--espaciado-base) var(--espaciado-base);
+  text-align: center;
+}
+
+/* ================================
+   Logo y Hero (Propuesta de valor)
+================================== */
+.plan__logo {
+  margin-bottom: -3.5rem;
+  text-align: center;
+}
+.plan__logo img {
+  width: 200px;
+  max-width: 60%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.plan__hero {
+  margin-bottom: var(--espaciado-lg);
+}
+.plan__hero h1 {
+  font-size: var(--font-xl);
+  color: var(--color-primario);
+  line-height: 1.2;
+}
+.plan__hero p {
+  font-size: var(--font-base);
+  color: var(--color-secundario);
+  margin-bottom: var(--espaciado-base);
+}
+.plan__hero .cta-primary {
+  background: var(--color-acento);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: var(--font-base);
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background var(--trans-duracion);
+  margin-bottom: var(--espaciado-sm);
+}
+.plan__hero .cta-primary:hover,
+.plan__hero .cta-primary:focus {
+  background: #c92b38;
+  outline: none;
+}
+.plan__hero .cta-primary:focus {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 2px;
+}
+.plan__hero .cta-texto {
+  font-size: var(--font-sm);
+  color: #555;
+}
+
+/* ================================
+   Beneficios (basados en estudios)
+================================== */
+.plan__beneficios {
+  background: #F8F9FA;
+  border-radius: var(--radius);
+  padding: var(--espaciado-base);
+  margin-bottom: var(--espaciado-lg);
+  text-align: left;
+  box-shadow: var(--shadow-light);
+}
+.plan__beneficios h2 {
+  margin-bottom: var(--espaciado-sm);
+  color: var(--color-secundario);
+  font-size: var(--font-lg);
+}
+.plan__beneficios ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================
+   Sección de detalles y precios
+================================== */
+.plan__detalles {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  background: var(--color-fondo);
+  border: 2px solid var(--color-secundario);
+  border-radius: var(--radius);
+  padding: 0;
+  text-align: left;
+  box-shadow: var(--shadow-light);
+  transition: opacity var(--trans-duracion), max-height var(--trans-duracion);
+  margin-bottom: var(--espaciado-lg);
+}
+.plan__detalles--visible {
+  opacity: 1;
+  max-height: 1000px;
+  padding: var(--espaciado-base);
+}
+.plan__detalles h2 {
+  color: var(--color-secundario);
+  font-size: var(--font-lg);
+  margin-bottom: var(--espaciado-sm);
+  font-weight: 700;
+}
+.plan__detalles ul {
+  margin-bottom: var(--espaciado-base);
+}
+.plan__detalles ul li {
+  margin-bottom: var(--espaciado-sm);
+}
+.plan__precio {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-base);
+}
+.plan__btn-whatsapp {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primario);
+  color: #fff;
+  padding: 0.75rem;
+  border: 2px solid var(--color-secundario);
+  border-radius: var(--radius);
+  font-size: var(--font-base);
+  cursor: pointer;
+  gap: var(--espaciado-sm);
+  transition: background var(--trans-duracion);
+}
+.plan__btn-whatsapp:hover,
+.plan__btn-whatsapp:focus {
+  background: var(--color-secundario);
+  outline: none;
+}
+.plan__btn-whatsapp:focus {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+}
+.plan__btn-whatsapp img {
+  width: 18px;
+  height: 18px;
+}
+
+/* ================================
+   Sección de testimonios (espacio para cuando tengas)
+================================== */
+.plan__testimonios {
+  margin-top: var(--espaciado-lg);
+  text-align: left;
+}
+.plan__testimonios h2 {
+  font-size: var(--font-lg);
+  margin-bottom: var(--espaciado-sm);
+  color: var(--color-secundario);
+}
+.plan__testimonios em {
+  display: block;
+  font-size: var(--font-sm);
+  color: #666;
+  margin-top: var(--espaciado-sm);
+}
+.plan__testimonios p {
+  font-size: var(--font-base);
+  margin-bottom: var(--espaciado-sm);
+}
+
+/* ================================
+   Referencias
+================================== */
+.referencias {
+  margin-top: var(--espaciado-lg);
+  font-size: var(--font-sm);
+  color: #555;
+  text-align: left;
+}
+.referencias h2 {
+  font-size: var(--font-lg);
+  margin-bottom: var(--espaciado-sm);
+  color: var(--color-secundario);
+}
+.referencias p {
+  margin-bottom: var(--espaciado-sm);
+  line-height: 1.4;
+}
+
+/* ================================
+   Ajustes específicos para móviles
+================================== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* más pequeño en móviles */
+  }
+  .plan__hero p {
+    font-size: var(--font-sm);
+  }
+  .plan__beneficios h2 {
+    font-size: var(--font-base);
+  }
+  .plan__beneficios ul li {
+    flex-direction: column;
+  }
+  .plan__beneficios ul li img {
+    margin-bottom: var(--espaciado-sm);
+  }
+  .plan__detalles h2 {
+    font-size: var(--font-base);
+  }
+  .plan__logo img {
+    width: 200px;
+  }
+}
